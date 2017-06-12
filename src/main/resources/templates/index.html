@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
-    <meta charset="utf-8"></meta>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PoE Ladder</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
   </head>
   <body>
-    <p th:text="${results.entries}"></p>
+    <table>
+      <tr>
+        <th>Rank</th>
+        <th>Online</th>
+        <th>Challenges</th>
+        <th>Account</th>
+        <th>Twitch</th>
+        <th>Character</th>
+        <th>Class</th>
+        <th>Level</th>
+        <th>Experience</th>
+      </tr>
+      <tr th:each="entry : ${results.entries}">
+        <td th:text="${entry.rank}"></td>
+        <td th:text="${entry.online}"></td>
+        <td th:text="${entry.account.challenges.total}"></td>
+        <td>
+          <a target="_blank" th:href="@{https://www.pathofexile.com/account/view-profile/} + ${entry.account.name}"><th:block th:text="${entry.account.name}" /></a>
+        </td>
+        <td>
+          <th:block th:unless="${entry.account.twitch}" th:text="'N/A'" />
+          <th:block th:if="${entry.account.twitch}">
+            <a target="_blank" th:href="@{https://www.twitch.tv/} + ${entry.account.twitch.name}"><th:block th:text="${entry.account.twitch.name}" /></a>
+          </th:block>
+        </td>
+        <td>
+          <th:block th:text="${entry.character.name}" />
+          <th:block th:if="${entry.dead}">&nbsp;(<span class="red">dead</span>)</th:block>
+        </td>
+        <td th:text="${entry.character.characterClass}"></td>
+        <td th:text="${entry.character.level}"></td>
+        <td th:text="${entry.character.experience}"></td>
+      </tr>
+    </table>
   </body>
 </html>

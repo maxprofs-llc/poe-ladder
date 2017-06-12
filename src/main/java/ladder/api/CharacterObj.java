@@ -52,7 +52,7 @@ public class CharacterObj {
     return "Character{" +
     "name='" + name + '\'' +
     ", level=" + level +
-    ", class='" + characterClass + '\'' +
+    ", characterClass='" + characterClass + '\'' +
     ", experience=" + experience +
     '}';
   }

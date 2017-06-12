@@ -1,0 +1,22 @@
+* {
+  font-family: helvetica, sans-serif;
+}
+
+th {
+  padding: 15px;
+  text-align: center;
+}
+
+td {
+  padding: 10px 5px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
