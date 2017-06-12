@@ -7,14 +7,30 @@ th {
   text-align: center;
 }
 
+th:first-child {
+  padding: 0 15px 0 0;
+}
+
 td {
   padding: 10px 5px;
   text-align: center;
 }
 
+td:first-child {
+  padding: 10px 15px 10px 0;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
+}
+
+h1 {
+  margin-bottom: 0px;
+}
+
+h3 {
+  margin-top: 8px;
 }
 
 .red {
