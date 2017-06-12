@@ -10,7 +10,7 @@ public class CharacterObj {
   private int level;
   @JsonProperty("class")
   private String characterClass;
-  private int experience;
+  private long experience;
 
   public CharacterObj() {
   }
@@ -39,11 +39,11 @@ public class CharacterObj {
     this.characterClass = characterClass;
   }
 
-  public int getExperience() {
+  public long getExperience() {
     return experience;
   }
 
-  public void setExperience(int experience) {
+  public void setExperience(long experience) {
     this.experience = experience;
   }
 
