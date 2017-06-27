@@ -33,6 +33,10 @@ h3 {
   margin-top: 8px;
 }
 
+h3.hc {
+  margin-bottom: 0px;
+}
+
 .red {
   color: red;
 }

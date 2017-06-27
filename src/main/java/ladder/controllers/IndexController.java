@@ -12,7 +12,7 @@ public class IndexController {
   @RequestMapping(value="/", method=RequestMethod.GET)
   public String index(Model model) {
     RestTemplate restTemplate = new RestTemplate();
-    ResponseInfo responseInfo = restTemplate.getForObject("http://api.pathofexile.com/ladders/1" + " " + "week" + " " + "legacy" + " " + "hc" + " " + "(jre055)?limit=20", ResponseInfo.class);
+    ResponseInfo responseInfo = restTemplate.getForObject("http://api.pathofexile.com/ladders/2" + " " + "week" + " " + "mayhem" + " " + "hc" + " " + "solo" + " " + "(jre093)?limit=20", ResponseInfo.class);
     model.addAttribute("results", responseInfo);
     return "index";
   }
